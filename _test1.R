@@ -15,7 +15,10 @@ gset <- getGEO("GSE58154", GSEMatrix =TRUE)
 if (length(gset) > 1) idx <- grep("GPL10787", attr(gset, "names")) else idx <- 1
 gset <- gset[[idx]]
 
+save.image("GSE58154.RData")
 # set parameters and draw the plot
+
+load("GSE58154.RData")
 
 dev.new(width=4+dim(gset)[[2]]/5, height=6)
 par(mar=c(2+round(max(nchar(sampleNames(gset)))/2),4,2,1))
